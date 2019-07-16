@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+    <link href="./vendor/normalize.css" type="text/css" rel="stylesheet">
+    <link href="./vendor/flickity-docs.css" type="text/css" rel="stylesheet">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Plugins</h1>
+    </header>
+    
+    <i class='fas fa-sync-alt refresh'></i>
+    <div class="carousel">
+    </div>
+    <div class="progress-bar"></div>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+
+<script id="template-slajd" type="x-tmpl-mustache">
+    <div class="carousel-cell" id="slajd{{ id }}" style="background-image: url( {{ image }} )">
+        <div class="container">
+            <h1> {{ title }} </h1>
+            {{{ descripton }}}
+        </div>
+    </div>
+</script>
+<script type="text/javascript" src="./vendor/mustache.min.js" ></script>
+<script type="text/javascript" src="./vendor/flickity-docs.min.js" ></script>
+<script type="text/javascript" src="./js/script.js" ></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1MaM0VN22SrGms0_tZOUkUwHAdYdFWak&callback=initMap"></script>
+</body>
+
+</html>
