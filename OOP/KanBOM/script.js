@@ -1,3 +1,6 @@
+'use strict';
+(function(){
+
 document.addEventListener('DOMContentLoaded', function() {
 
 var board = {
@@ -110,3 +113,4 @@ todoColumn.addCard(card1);
 doingColumn.addCard(card2);
 
 });
+})();
