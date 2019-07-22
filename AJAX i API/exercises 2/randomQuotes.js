@@ -1,10 +1,11 @@
 
 var tweetLink = "https://twitter.com/intent/tweet?text=";
-var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=";
 var prefix = "https://cors-anywhere.herokuapp.com/";
 
 function getQuote() {
-    fetch(prefix + quoteUrl, { cache: "no-store", credentials: "same-origin" })
+    var random = Math.random();
+    fetch(prefix + quoteUrl + random, { cache: "no-store", credentials: "same-origin" })
         .then(function(resp) {
             return resp.json();
         })
