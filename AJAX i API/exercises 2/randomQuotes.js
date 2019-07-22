@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 (function(){
 
 var tweetLink = "https://twitter.com/intent/tweet?text=";
