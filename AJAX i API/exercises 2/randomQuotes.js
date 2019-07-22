@@ -1,3 +1,4 @@
+'use strict';
 (function(){
 
 var tweetLink = "https://twitter.com/intent/tweet?text=";
@@ -5,7 +6,8 @@ var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&fi
 var prefix = "https://cors-anywhere.herokuapp.com/";
 
 function getQuote() {
-    fetch(prefix + quoteUrl, { cache: "no-store" })
+    var random = Math.random();
+    fetch(prefix + quoteUrl + random, { cache: "no-store" })
         .then(function(resp) {
             return resp.json();
         })
@@ -13,10 +15,9 @@ function getQuote() {
 }
 
 function createTweet(input) {
-
     var data = input[0];
     var dataElement = document.createElement('div');
-        dataElement.innerHTML = data.content;
+    dataElement.innerHTML = data.content;
     var quoteText = dataElement.innerText.trim();
     var quoteAuthor = data.title;
     var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
@@ -27,6 +28,7 @@ function createTweet(input) {
     
     if (tweetText.length > 140) {
         getQuote();
+
     } else {
         var tweet = tweetLink + encodeURIComponent(tweetText);
         document.querySelector('.quote').innerText = quoteText;
