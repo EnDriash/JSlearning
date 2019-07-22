@@ -17,5 +17,6 @@
         );
         xhr.send();
     }
+    getJoke();
 
 })();
