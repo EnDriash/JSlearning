@@ -7,7 +7,7 @@ var prefix = "https://cors-anywhere.herokuapp.com/";
 
 function getQuote() {
     var random = Math.random();
-    fetch(prefix + quoteUrl + random, { cache: "no-store" })
+    fetch(prefix + quoteUrl + random)
         .then(function(resp) {
             return resp.json();
         })
