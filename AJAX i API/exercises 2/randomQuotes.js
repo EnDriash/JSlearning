@@ -6,8 +6,7 @@ var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&fi
 var prefix = "https://cors-anywhere.herokuapp.com/";
 
 function getQuote() {
-    var random = Math.random();
-    fetch(prefix + quoteUrl + random)
+    fetch(prefix + quoteUrl, { cache: "no-store" })
         .then(function(resp) {
             return resp.json();
         })
