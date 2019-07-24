@@ -23,8 +23,6 @@ function searchCountries() {
 function showCountriesList(resp) {
     var response = resp[0];
 
-    console.log(response);
-    console.log(response.capital + " " + response.languages[0].iso639_1);
     countriesList.innerHTML = '';
     resp.forEach(function(item){
         var liEl = document.createElement('li');
