@@ -2,12 +2,21 @@ var OSinfo = require('./modules/OSinfo');
 var readline = require('readline');
 var systemTime = require('./modules/systemTime');
 process.stdin.setEncoding('utf-8');
+var EventEmitter = require('events').EventEmitter;
+var emitter = new EventEmitter();
 
+emitter.on('beforeCommand', function(instruction) {
+    console.log('You wrote: ' + instruction + ' trying to run command.')
+});
+emitter.on('afterCommand', function() {
+console.log('Finished command');
+});
 
 process.stdin.on('readable', function() {
     var input = process.stdin.read();
     if(input !== null) {
         var instruction = input.toString().trim();
+        emitter.emit('beforeCommand', instruction);
         switch (instruction) {
             case '/exit':
                 process.stdout.write('Quiting app!\n');
@@ -46,6 +55,7 @@ process.stdin.on('readable', function() {
                 break;
             default:
                 process.stderr.write('Instruction dosent egzist\n');
-        }
+        };
+        emitter.emit('afterCommand');
     }
 });
