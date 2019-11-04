@@ -1,10 +1,34 @@
 [
-    {
-        "id": "1",
-        "body":"zrobic sniadanie"
-    },
-    {
-        "id": "2",
-        "body":"zrobic obiad"
-    }
+   {
+      "id": "1",
+      "body": "zrobic sniadanie"
+   },
+   {
+      "id": "2",
+      "body": "zrobic obiad"
+   },
+   {
+      "id": "3",
+      "body": "Zrob nowa gre"
+   },
+   {
+      "id": "4",
+      "body": "Napisz program"
+   },
+   {
+      "id": "5",
+      "body": "cos tam zrob 1"
+   },
+   {
+      "id": "6",
+      "body": "cos tam zrob 2"
+   },
+   {
+      "id": "7",
+      "body": "cos tam zrob 3"
+   },
+   {
+      "id": "8",
+      "body": "dsada"
+   }
 ]
